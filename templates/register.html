@@ -2,14 +2,24 @@
 <title>Register Page</title>
 
 {%endblock%} {%block body%}
-
-<form method="post">
-  <div class="flex items-center flex-col justify-center">
-    {{form.hidden_tag()}} {{form.username.label}}{{form.username()}}
-    {{form.email.label}}{{form.email()}}
-    {{form.password.label}}{{form.password()}}
-    {{form.confirm_password.label}}{{form.confirm_password()}}
-     {{form.submit()}}
-  </div>
-</form>
+<div class="h-screen flex flex-col items-center justify-center">
+  <form method="post">
+    <div class="bg-gray-300 w-[500px] h-[400px] m-4 p-4">
+      <div class="flex flex-col items-center justify-center ">
+        {{form.hidden_tag()}}
+        {{form.username.label}}{{form.username(class='outline-none bg-white rounded-[4px] m-1 p-1')}}
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        {{form.email.label}}{{form.email(class='outline-none  bg-white rounded-[4px] m-1 p-1')}}
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        {{form.password.label}}{{form.password(class='outline-none  bg-white rounded-[4px] m-1 p-1')}}
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        {{form.confirm_password.label}}{{form.confirm_password(class='outline-none bg-white rounded-[4px] m-1 p-1')}} 
+        {{form.submit(class='bg-green-500 w-60   rounded-[8px] m-2 p-1 ')}}
+      </div>
+    </div>
+  </form>
+</div>
 {%endblock%}
