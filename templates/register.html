@@ -1,8 +1,15 @@
-{%extends 'base.html'%} 
-{%block title%}
+{%extends 'base.html'%} {%block title%}
 <title>Register Page</title>
 
-{%endblock%}
- {%block body%}
-<h1 >{{msg}}</h1>
+{%endblock%} {%block body%}
+
+<form method="post">
+  <div class="flex items-center flex-col justify-center">
+    {{form.hidden_tag()}} {{form.username.label}}{{form.username()}}
+    {{form.email.label}}{{form.email()}}
+    {{form.password.label}}{{form.password()}}
+    {{form.confirm_password.label}}{{form.confirm_password()}}
+     {{form.submit()}}
+  </div>
+</form>
 {%endblock%}
