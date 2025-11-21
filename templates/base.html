@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {%block title%}{%endblock%}
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body>
-    {%block body%}{%endblock%}
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    {%block body%}{%endblock%} {%with
+    messages=get_flashed_messages(with_categories=true)%} {%if messages%} {%for
+    category,message in messages%}
+    <div
+      class=" flash
+      {%if category=='success'%}
+        text-green-500 
+         {%else%}
+          text-red-400
+          {%endif%}"
+    >
+      {{message}}
+    </div>
+    {%endfor%} {%endif%} {%endwith%}
+ <script>
+  // Select both flash messages and form field error messages
+  const messages = document.querySelectorAll(".flash");
+
+  messages.forEach((msg) => {
+    setTimeout(() => {
+      msg.classList.add("opacity-0", "transition-opacity", "duration-700");
+      setTimeout(() => msg.remove(), 700); // remove fully after fade-out
+    }, 3000); // start fade after 3s
+  });
+</script>
+  </body>
 </html>
