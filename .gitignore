@@ -1,0 +1,52 @@
+.env*
+.env.local
+.env
+__pycache__
+instance
+# =====================================
+# Python
+# =====================================
+
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+register_env/
+.venv/
+
+# Environment variables
+.env
+
+# =====================================
+# Node / TailwindCSS
+# =====================================
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# =====================================
+# Build / Output files
+# =====================================
+static/css/main.css
+static/src/output.css
+dist/
+build/
+
+# =====================================
+# IDE / Editor settings
+# =====================================
+.vscode/
+.idea/
+*.swp
+
+# =====================================
+# System files
+# =====================================
+.DS_Store
+Thumbs.db
